@@ -6,10 +6,10 @@ const reviewTotalDisplay = document.querySelector('#reviews')
 
 const reviews = [
     {
-        name: 'Sheia',
-        stars: 5,
-        loyaltyUser: true,
-        date: '01-04-2021'
+        name: 'Sheia', 
+        stars: 5, //integer
+        loyaltyUser: true, //boolean
+        date: '01-04-2021' //string
     },
     {
         name: 'Andrzej',
