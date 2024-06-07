@@ -2,9 +2,8 @@
 // Write a function that will only accept numbers and attend to 
 // all TypeScript weakness flags.
 // : number (syntax to set number parameter)
-const reviewTotalDisplay = document.querySelector('#reviews')
-const userNameDisplay = document.querySelector('#user')
-const returningUserDisplay = document.querySelector('#returning-user')
+import {showReviewTotal} from "./utills"
+import {populateUser} from "./utills"
 
 let isOpen : boolean
 
@@ -34,35 +33,40 @@ const reviews : {
     },
 ]
 
-// Function to display total number of reviews
-function showReviewTotal (value : number, reviewer: string, isLoyalty : boolean) {
-    const iconDisplay = isLoyalty ? '⭐' : ''
-    reviewTotalDisplay.innerHTML = 'review total ' + value.toString() + '| last reviewed by' + reviewer + ' ' + iconDisplay
-}
-
-showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
-
-
 const you: {
     firstName: string;
     lastName: string;
     isReturning: boolean;
     age: number;
-    stayedAt: string[];
+    stayedAt: string[]
 } = {
     firstName: 'Bobby',
     lastName: 'Brown',
     isReturning: true,
     age: 35,
     stayedAt: ['florida-home', 'oman-flat', 'tokyo-bungalow']
- }
-
- console.log(you.userName)
-
-function populateUser(isReturning : boolean, userName : string ) {
-    if (isReturning){
-        returningUserDisplay.innerHTML = 'back'
-    }
-    userNameDisplay.innerHTML = userName
 }
+
+const properties : {
+    image: string;
+    title: string;
+    price: number;
+    location: {
+        firstLine: string;
+        city: string;
+        code: number;
+        country: string;
+    };
+    contact: string;
+    isAvailable: boolean;
+}[] = [
+    {
+        
+    }
+]
+
+
+
+
+showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
 populateUser(you.isReturning, you.userName)
