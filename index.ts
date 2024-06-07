@@ -6,7 +6,7 @@ import { showReviewTotal, populateUser } from './utils'
 
 
 const propertyContainer = document.querySelector('.properties')
-
+const footer = document.querySelector('.footer')
 let isOpen : boolean
 
 const reviews : {
