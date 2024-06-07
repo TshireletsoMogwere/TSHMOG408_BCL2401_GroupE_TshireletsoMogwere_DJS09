@@ -2,8 +2,7 @@
 // Write a function that will only accept numbers and attend to 
 // all TypeScript weakness flags.
 // : number (syntax to set number parameter)
-import {showReviewTotal} from "./utills"
-import {populateUser} from "./utills"
+import { showReviewTotal, populateUser } from './utils'
 
 let isOpen : boolean
 
