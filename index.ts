@@ -6,6 +6,8 @@ const reviewTotalDisplay = document.querySelector('#reviews')
 const userNameDisplay = document.querySelector('#user')
 const returningUserDisplay = document.querySelector('#returning-user')
 
+let isOpen : boolean
+
 const reviews = [
     {
         name: 'Sheia', 
