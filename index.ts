@@ -3,10 +3,10 @@
 // all TypeScript weakness flags.
 // : number (syntax to set number parameter)
 
-import { showReviewTotal, populateUser } from './utils'
+import { showReviewTotal, populateUser, getTopTwoReviews } from './utils'
 import { Permissions , LoyaltyUser } from './enums'
-import { Price, Country } from './types.ts'
-import  Review  from './interfaces.ts'
+import { Review, Property } from './interfaces'
+import MainProperty from './classes' 
 const reviewContainer = document.querySelector('.reviews')
 const container = document.querySelector('.container')
 const button = document.querySelector('button')
@@ -15,15 +15,8 @@ const footer = document.querySelector('.footer')
 
 let isLoggedIn: boolean
 
-interface Review {
-    name: string; 
-    stars: number; 
-    loyaltyUser: LoyaltyUser; 
-    date: string;   
-}
-
 // Reviews
-const reviews : any[] = [
+const reviews : Review[] = [
     {
         name: 'Sheia',
         stars: 5,
@@ -41,7 +34,6 @@ const reviews : any[] = [
         stars: 4,
         loyaltyUser: LoyaltyUser.SILVER_USER,
         date: '27-03-2021',
-        description: 'Great hosts, location was a bit further than said.'
     },
 ]
 
@@ -54,19 +46,6 @@ const you = {
     stayedAt: ['florida-home', 'oman-flat', 'tokyo-bungalow']
 }
 
-interface Property {
-    image: string;
-    title: string;
-    price: Price;
-    location: {
-        firstLine: string;
-        city: string;
-        code: number | string;
-        country: Country
-    }
-    contact: [ number, string];
-    isAvailable: boolean;
-}
 
 // Array of Properties
 const properties : Property[] = [
@@ -86,7 +65,7 @@ const properties : Property[] = [
     {
         image: 'images/poland-property.jpg',
         title: 'Polish Cottage',
-        price: 34,
+        price: 30,
         location: {
             firstLine: 'no 23',
             city: 'Gdansk',
@@ -99,7 +78,7 @@ const properties : Property[] = [
     {
         image: 'images/london-property.jpg',
         title: 'London Flat',
-        price: 23,
+        price: 25,
         location: {
             firstLine: 'flat 15',
             city: 'London',
@@ -150,13 +129,13 @@ for (let i = 0; i < properties.length; i++) {
     const image = document.createElement('img')
     image.setAttribute('src', properties[i].image)
     card.appendChild(image)
-    propertyContainer.appendChild(card)
     showDetails(you.permissions, card, properties[i].price)
+    propertyContainer.appendChild(card)
 }
 
 
 let count = 0
-function addReviews(array: {string, name, loyaltyUser}) : void {
+function addReviews(array : Review[]) : void {
     if (!count ) {
         count++
         const topTwo = getTopTwoReviews(array)
