@@ -36,6 +36,16 @@ const reviews : {
     },
 ]
 
+const ADMIN = 'admin'
+const READ_ONLY = 'read-only'
+
+enum Permissions {
+    ADMIN,
+    READ_ONLY
+}
+
+
+
 const you: {
     firstName: string;
     lastName: string;
