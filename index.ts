@@ -3,6 +3,7 @@
 // all TypeScript weakness flags.
 // : number (syntax to set number parameter)
 import { showReviewTotal, populateUser } from './utils'
+const propertyContainer = document.querySelector('.properties')
 
 
 const propertyContainer = document.querySelector('.properties')
@@ -63,7 +64,7 @@ const properties : {
     isAvailable: boolean;
 }[] = [
     {
-        image: '',
+        image: 'images/colombia-property.jpg',
         title: 'Colombian Shack',
         price: 45,
         location: {
