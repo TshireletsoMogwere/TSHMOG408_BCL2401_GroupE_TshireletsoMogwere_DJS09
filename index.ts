@@ -37,3 +37,6 @@ function add(firstValue : (number | string), secondValue: (number | string)) {
         console.log('cannot perform this addition')
     }
 }
+
+const combinedReviews = add(5,1)
+const firstNameLastName = add('Ania', 'Kubow')
