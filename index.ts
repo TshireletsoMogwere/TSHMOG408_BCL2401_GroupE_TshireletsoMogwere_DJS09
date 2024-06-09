@@ -5,8 +5,8 @@
 
 import { showReviewTotal, populateUser } from './utils'
 import { Permissions , LoyaltyUser } from './enums'
-import { Price, Country } from './types'
-import { Review } from './interfaces'
+import { Price, Country } from './types.ts'
+import  Review  from './interfaces.ts'
 const reviewContainer = document.querySelector('.reviews')
 const container = document.querySelector('.container')
 const button = document.querySelector('button')
@@ -54,21 +54,22 @@ const you = {
     stayedAt: ['florida-home', 'oman-flat', 'tokyo-bungalow']
 }
 
-
-// Array of Properties
-const properties : {
+interface Property {
     image: string;
     title: string;
-    price: number;
+    price: Price;
     location: {
         firstLine: string;
         city: string;
-        code: number;
-        country: Country;
-    };
-    contact: [ number, string ];
+        code: number | string;
+        country: Country
+    }
+    contact: [ number, string];
     isAvailable: boolean;
-}[] = [
+}
+
+// Array of Properties
+const properties : Property[] = [
     {
         image: 'images/colombia-property.jpg',
         title: 'Colombian Shack',
@@ -107,8 +108,23 @@ const properties : {
         },
         contact: [+34829374892553, 'andyluger@aol.com'],
         isAvailable: true
+    },
+
+    {
+        image: 'images/malaysian-hotel.jpeg',
+        title: 'Malia Hotel',
+        price: 35,
+        location: {
+            firstLine: 'Room 4',
+            city: 'Malia',
+            code: 45334,
+            country: 'Malaysia'
+        },
+        contact: [ +60349822083, 'lee34@gmail.com'],
+        isAvailable: false
     }
 ]
+
 
 // Functions
 showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
