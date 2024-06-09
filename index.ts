@@ -9,3 +9,7 @@ const userNameDisplay = document.querySelector('#user')
 
 import { LoyaltyUser } from './enums.ts'
 
+export function showReviewTotal(value: number, reviewer: string, isLoyalty: LoyaltyUser) {
+    const iconDisplay = LoyaltyUser.GOLD_USER ? '⭐' : ''
+    reviewTotalDisplay.innerHTML = 'review total ' + value.toString() + '| last reviewed by ' + reviewer + ' ' + iconDisplay
+}
