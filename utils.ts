@@ -1,6 +1,7 @@
 const reviewTotalDisplay = document.querySelector('#reviews')
 const userNameDisplay = document.querySelector('#user')
 const returningUserDisplay = document.querySelector('#returning-user')
+import { LoyaltyUser, Permissions } from './enums'
 
 export function showReviewTotal(value: number, reviewer: string, isLoyalty: boolean) {
     const iconDisplay = isLoyalty ? '⭐' : ''
