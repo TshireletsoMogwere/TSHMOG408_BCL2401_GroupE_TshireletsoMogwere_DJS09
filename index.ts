@@ -4,7 +4,7 @@
 // : number (syntax to set number parameter)
 import { showReviewTotal, populateUser } from './utils'
 const propertyContainer = document.querySelector('.properties')
-
+const footer = document.querySelector('.footer')
 
 const propertyContainer = document.querySelector('.properties')
 const footer = document.querySelector('.footer')
