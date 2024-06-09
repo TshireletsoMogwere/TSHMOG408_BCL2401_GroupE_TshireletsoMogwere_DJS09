@@ -3,11 +3,10 @@ const userNameDisplay = document.querySelector('#user')
 const returningUserDisplay = document.querySelector('#returning-user')
 import { LoyaltyUser, Permissions } from './enums'
 
-export function showReviewTotal(value: number, reviewer: string, isLoyalty: boolean) {
-    const iconDisplay = isLoyalty ? '⭐' : ''
-    reviewTotalDisplay.innerHTML = 'review total ' + value.toString() + '| last reviewed by ' + reviewer + ' ' + iconDisplay
+export function showReviewTotal(value: number, reviewer: string, isLoyalty: LoyaltyUser) {
+    const iconDisplay = LoyaltyUser.GOLD_USER ? '⭐' : ''
+    reviewTotalDisplay.innerHTML = value.toString() + 'Review' + makeMultiple(value) + '| last reviewed by ' + reviewer + ' ' + iconDisplay
 }
-
 export function populateUser(isReturning : boolean, userName: string ) {
     if (isReturning == true){
         returningUserDisplay.innerHTML = 'back'
