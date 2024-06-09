@@ -38,3 +38,9 @@ body {
 .user-container {
     margin: 20px;
 }
+
+.properties {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
