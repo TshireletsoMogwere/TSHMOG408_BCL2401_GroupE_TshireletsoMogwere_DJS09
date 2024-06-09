@@ -22,3 +22,9 @@ export function showDetails(value: boolean | Permissions, element : HTMLDivEleme
         element.appendChild(priceDisplay)
     }
 }
+
+export function makeMultiple(value: number) : string {
+    if (value > 1 || value == 0 ) {
+        return 's'
+    } else return ''
+}
