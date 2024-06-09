@@ -4,7 +4,7 @@
 // : number (syntax to set number parameter)
 
 const reviewTotalDisplay = document.querySelector('#reviews')
-
+const returningUserDisplay = document.querySelector('#returning-user')
 
 import { LoyaltyUser } from './enums.ts'
 
