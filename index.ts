@@ -6,6 +6,7 @@
 import { showReviewTotal, populateUser } from './utils'
 import { Permissions , LoyaltyUser } from './enums'
 import { Price, Country } from './types'
+import { Review } from './interfaces'
 const reviewContainer = document.querySelector('.reviews')
 const container = document.querySelector('.container')
 const button = document.querySelector('button')
