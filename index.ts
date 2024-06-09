@@ -3,7 +3,7 @@
 // all TypeScript weakness flags.
 // : number (syntax to set number parameter)
 import { showReviewTotal, populateUser } from './utils'
-import { Permissions } from './enums.ts'
+import { LoyaltyUser } from './enums.ts'
 const propertyContainer = document.querySelector('.properties')
 const footer = document.querySelector('.footer')
 
