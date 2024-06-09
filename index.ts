@@ -3,6 +3,7 @@
 // all TypeScript weakness flags.
 // : number (syntax to set number parameter)
 import { showReviewTotal, populateUser } from './utils'
+import { Permissions } from './enums.ts'
 const propertyContainer = document.querySelector('.properties')
 const footer = document.querySelector('.footer')
 
@@ -35,16 +36,6 @@ const reviews : {
         date: '27-03-2021'
     },
 ]
-
-const ADMIN = 'admin'
-const READ_ONLY = 'read-only'
-
-enum Permissions {
-    ADMIN,
-    READ_ONLY
-}
-
-
 
 const you: {
     firstName: string;
