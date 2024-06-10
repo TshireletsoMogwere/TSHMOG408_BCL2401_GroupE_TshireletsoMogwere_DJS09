@@ -1,7 +1,7 @@
 const reviewTotalDisplay = document.querySelector('#reviews')
 const userNameDisplay = document.querySelector('#user')
 const returningUserDisplay = document.querySelector('#returning-user')
-import { LoyaltyUser, Permissions } from './enums'
+import { LoyaltyUser, Permissions } from './src/enums'
 import  Review  from './interfaces'
 
 export function showReviewTotal(value: number, reviewer: string, isLoyalty: LoyaltyUser) {
